@@ -199,8 +199,8 @@ function applyLang(lang) {
 }
 /* Nav language buttons */
 document.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("lang") || "en";
-  applyLang(saved);
+  localStorage.setItem("lang", "en");
+  applyLang("en");
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
   });

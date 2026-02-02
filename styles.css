@@ -1,0 +1,19 @@
+:root {
+  --primary: #0d6efd;
+}
+html {
+  scroll-behavior: smooth;
+}
+.gradient-hero {
+  background: linear-gradient(135deg, #111 0%, #1e293b 40%, #0d6efd 100%);
+}
+.section-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-card { border: 1px solid rgba(0,0,0,0.06); }
+.solution-card { background: #fff; transition: transform .2s ease, box-shadow .2s ease; }
+.solution-card:hover { transform: translateY(-3px); box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.08); }
+#topNav .nav-link { opacity: 0.9; }
+#topNav .nav-link.active { color: #fff; font-weight: 600; }
+footer { border-top: 1px solid rgba(255,255,255,0.1); } 

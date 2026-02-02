@@ -1,9 +1,9 @@
 :root {
   --primary: #0d6efd;
+  --focus: #ffbf47; /* high-contrast focus color */
 }
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
+body { line-height: 1.6; }
 .gradient-hero {
   background: linear-gradient(135deg, #111 0%, #1e293b 40%, #0d6efd 100%);
 }
@@ -12,8 +12,42 @@ html {
   margin-bottom: 1rem;
 }
 .hero-card { border: 1px solid rgba(0,0,0,0.06); }
-.solution-card { background: #fff; transition: transform .2s ease, box-shadow .2s ease; }
-.solution-card:hover { transform: translateY(-3px); box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.08); }
+.solution-card {
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.solution-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.08);
+}
 #topNav .nav-link { opacity: 0.9; }
 #topNav .nav-link.active { color: #fff; font-weight: 600; }
-footer { border-top: 1px solid rgba(255,255,255,0.1); } 
+/* Accessibility: visible focus for keyboard users */
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border: 2px solid #000;
+  padding: .5rem 1rem;
+  z-index: 10000;
+}
+/* Contrast-friendly footer separator */
+footer { border-top: 1px solid rgba(255,255,255,0.2); }
+/* Form validation (Bootstrap overrides for clarity) */
+.was-validated .form-control:invalid, .form-control.is-invalid { border-color: #dc3545; }
+.was-validated .form-control:valid, .form-control.is-valid { border-color: #198754; } 
